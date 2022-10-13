@@ -50,13 +50,13 @@ html {
     margin: 8px;
     box-shadow: inset 0 0 0 2px #922ec5;
 }
-.mix {
+.shuffle {
     background-color: #000;
     color: #fff;
     font: 1.2rem/1.4 Georgia, serif;
     padding: 5px 25px;
     border-radius: 5px;
 }
-.mix:hover {
+.shuffle:hover {
     background-color: #922ec5;
 }

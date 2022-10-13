@@ -13,7 +13,12 @@ let matrix = getMatrix(
 )
 setPositionItems(matrix);
 
-//  shufl
+//  Shuffle
+document.getElementById('shuffle').addEventListener('click', () => {
+    const shuffledArray = shuffleArray(matrix.flat());
+    matrix = getMatrix(shuffledArray);
+    setPositionItems(matrix);
+})
 
 
 
@@ -49,4 +54,11 @@ function setPositionItems(matrix) {
 function setNodeStyles(node, x, y) {
     const shiftPs = 100;
     node.style.transform = `translate3D(${x * shiftPs}%, ${y * shiftPs}%, 0)`;
+}
+
+function shuffleArray(arr) {
+    return arr
+        .map(value => ({ value, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ value }) => value)
 }
