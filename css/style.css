@@ -39,7 +39,7 @@ html {
     font-size: 2rem;
     cursor: pointer;
     box-shadow: inset 1px 1px #e5d6f6;
-    transition: transform .2s;
+    transition: transform .2s, filter .5s;
 }
 .item__number {
     display: flex;
@@ -59,4 +59,7 @@ html {
 }
 .shuffle:hover {
     background-color: #922ec5;
+}
+.won .game__item {
+    filter: brightness(200%);
 }

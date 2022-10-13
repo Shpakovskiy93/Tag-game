@@ -138,4 +138,32 @@ function swap(coords1, coords2, matrix) {
     const coords1Number = matrix[coords1.y][coords1.x];
     matrix[coords1.y][coords1.x] = matrix[coords2.y][coords2.x];
     matrix[coords2.y][coords2.x] = coords1Number;
+
+
+    if(iswon(matrix)) {
+        addWonClass();
+    }
+}
+
+const winFlatArr = new Array(16).fill(0).map((item, i) => i + 1);
+function iswon(matrix) {
+    const flatMatrix = matrix.flat();
+    for(let i = 0; i < winFlatArr.length; i++) {
+        if(flatMatrix[i] !== winFlatArr[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+const wonClass = 'won';
+function addWonClass() {
+    setTimeout(() => {
+        containerNode.classList.add(wonClass);
+
+        setTimeout(() => {
+            containerNode.classList.remove(wonClass);
+        }, 1000);
+    }, 200);
 }
